@@ -1,0 +1,22 @@
+{
+    "name": "saleh7/proxmox-ve_php_api",
+    "type": "library",
+    "description": "ProxmoxVE PHP API",
+    "keywords": ["Proxmox", "API", "PHP", "PVE"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Saleh",
+            "email": "Saleh7@protonmail.ch"
+        }
+    ],
+    "require-dev": {
+        "php-curl-class/php-curl-class": "8.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Proxmox\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
