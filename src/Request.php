@@ -24,7 +24,7 @@ class Request
      * Proxmox Api client
      * @param array $configure   hostname, username, password, realm, port
     */
-    public static function Login(array $configure, $verifySSL = false)
+    public static function Login(array $configure, $verifySSL = false, $verifyHost = false)
     {
         $check = false;
         self::$hostname = !empty($configure['hostname'])  ? $configure['hostname']  : $check = true;
@@ -35,16 +35,19 @@ class Request
         if ($check) {
             throw new ProxmoxException('Require in array [hostname], [username], [password], [realm], [port]');
         }
-        self::ticket($verifySSL);
+        self::ticket($verifySSL, $verifyHost);
     }
     /**
      * Create or verify authentication ticket.
      * POST /api2/json/access/ticket
     */
-    protected static function ticket($verifySSL)
+    protected static function ticket($verifySSL, $verifyHost)
     {
         self::$Client = new \Curl\Curl();
-        self::$Client->setOpt(CURLOPT_SSL_VERIFYPEER, $verifySSL);
+        self::$Client->setOpts([
+            CURLOPT_SSL_VERIFYPEER => $verifySSL,
+            CURLOPT_SSL_VERIFYHOST => $verifyHost
+        ]);
         $response = self::$Client->post("https://".self::$hostname.":".self::$port."/api2/json/access/ticket", array(
             'username'  => self::$username,
             'password'  => self::$password,
