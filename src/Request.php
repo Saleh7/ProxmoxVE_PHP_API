@@ -85,6 +85,7 @@ class Request
              return self::$Client->post($api, $params);
              break;
            case "DELETE":
+             self::$Client->removeHeader('Content-Length');
              return self::$Client->delete($api, $params);
              break;
            default:
