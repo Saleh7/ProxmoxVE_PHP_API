@@ -65,7 +65,7 @@ class Nodes
     * @param string   $node     The cluster node name.
     * @param array    $data
   */
-  public function createAptUpdate($data = array())
+  public function createAptUpdate($node, $data = array())
   {
       return Request::Request("/nodes/$node/apt/update", $data, "POST");
   }
