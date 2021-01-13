@@ -882,6 +882,17 @@ class Nodes
     * @param integer  $vmid     The (unique) ID of the VM.
     * @param array    $data
   */
+    public function lxcReboot($node, $vmid, $data = array())
+  {
+      return Request::Request("/nodes/$node/lxc/$vmid/status/reboot", $data, 'POST');
+  }
+    /**
+    * Reboot the container.
+    * POST /api2/json/nodes/{node}/lxc/{vmid}/status/reboot
+    * @param string   $node     The cluster node name.
+    * @param integer  $vmid     The (unique) ID of the VM.
+    * @param array    $data
+  */
   public function lxcSuspend($node, $vmid, $data = array())
   {
       return Request::Request("/nodes/$node/lxc/$vmid/status/suspend", $data, 'POST');
