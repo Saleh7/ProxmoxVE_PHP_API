@@ -3,43 +3,45 @@
 # ProxmoxVE PHP API
 
 ## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-    - [Example](#example)
+- [ProxmoxVE PHP API](#proxmoxve-php-api)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
     - [Quick Usage](#quick-usage)
+    - [Use API Token](#use-api-token)
+    - [Example](#example)
     - [Create LXC container](#create-lxc-container)
     - [Delete LXC container](#delete-lxc-container)
     - [Create VM](#create-vm)
     - [Delete VM](#delete-vm)
-- Resource Tree
-    - [Request](#request)
-    - [Access](#access)
-        - [Domains](#domains)
-        - [Groups](#groups)
-        - [Roles](#roles)
-        - [Users](#users)
-    - [Cluster](#cluster)
-        - [Backup](#backup)
-        - [Config](#config)
-        - [Firewall](#firewall)
-        - [HA](#ha)
-        - [Replication](#replication)
-    - [Nodes](#nodes)
-         - [Apt](#apt)
-         - [Ceph](#ceph)
-         - [Disks](#disks)
-         - [Nodes Firewall](#nodes-firewall)
-         - [LXC](#lxc)
-         - [Network](#network)
-         - [Qemu](#qemu)
-         - [Nodes Replication](#nodes-replication)
-         - [Scan](#scan)
-         - [Service](#service)
-         - [Nodes Storage](#nodes-storage)
-         - [Tasks](#tasks)
-          - [Vzdump](#vzdump)
-    - [Pools](#pools)
-    - [Storage](#storage)
+  - [Request](#request)
+  - [Access](#access)
+  - [Domains](#domains)
+  - [Groups](#groups)
+  - [Roles](#roles)
+  - [Users](#users)
+  - [Cluster](#cluster)
+  - [Backup](#backup)
+  - [Config](#config)
+  - [Firewall](#firewall)
+  - [HA](#ha)
+  - [Replication](#replication)
+  - [Pools](#pools)
+  - [Storage](#storage)
+  - [Nodes](#nodes)
+  - [Apt](#apt)
+  - [Ceph](#ceph)
+  - [Disks](#disks)
+  - [Nodes Firewall](#nodes-firewall)
+  - [Lxc](#lxc)
+  - [Network](#network)
+  - [Qemu](#qemu)
+  - [Nodes Replication](#nodes-replication)
+  - [Scan](#scan)
+  - [Service](#service)
+  - [Nodes Storage](#nodes-storage)
+  - [Tasks](#tasks)
+  - [Vzdump](#vzdump)
 
 
 ## Installation
@@ -66,6 +68,26 @@ Request::Login($configure); // Login ..
 
 // Request($path, array $params = null, $method="GET")
 print_r( Request::Request('/nodes', null, 'GET') ); // List Nodes
+```
+
+### Use API Token
+```php
+require __DIR__ . '/vendor/autoload.php'; // Autoload files using Composer autoload
+use Proxmox\Request;
+use Proxmox\Access;
+use Proxmox\Cluster;
+use Proxmox\Nodes;
+use Proxmox\Pools;
+use Proxmox\Storage;
+
+$configure = [
+    'hostname' => '0.0.0.0',
+    'username' => 'root',
+    'token_name' => 'apitoken',
+    'token_value' => '00000000-0000-0000-0000-000000000000'
+];
+Request::Login($configure); // Login ..
+print_r( Access::listNodes() ); // List Nodes
 ```
 
 ### Example
