@@ -1129,10 +1129,11 @@ class Nodes
     * DELETE /api2/json/nodes/{node}/qemu/{vmid}
     * @param string   $node    The cluster node name.
     * @param integer  $vmid    The (unique) ID of the VM.
+    * @param array    $data
   */
-  public function deleteQemu($node, $vmid)
+  public function deleteQemu($node, $vmid, $data = array())
   {
-      return Request::Request("/nodes/$node/qemu/$vmid", null,"DELETE");
+      return Request::Request("/nodes/$node/qemu/$vmid", $data, "DELETE");
   }
   /**
     * Directory index.
