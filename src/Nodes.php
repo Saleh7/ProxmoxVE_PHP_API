@@ -1565,6 +1565,28 @@ class Nodes
       return Request::Request("/nodes/$node/qemu/$vmid/status/agent", $data, 'POST');
   }
   /**
+    * Execute command via Qemu Guest Agent.
+    * POST /api2/json/nodes/{node}/qemu/{vmid}/status/agent/exec
+    * @param string   $node    The cluster node name.
+    * @param integer  $vmid    The (unique) ID of the VM.
+    * @param array    $data
+  */
+  public function qemuAgentExec($node, $vmid, $data = array())
+  {
+    return Request::Request("/nodes/$node/qemu/$vmid/agent/exec", $data, 'POST');
+  }
+  /**
+   * Change user password via Qemu Guest Agent.
+   * POST /api2/json/nodes/{node}/qemu/{vmid}/agent/set-user-password
+   * @param string   $node    The cluster node name.
+   * @param integer  $vmid    The (unique) ID of the VM.
+   * @param array    $data
+   */
+  public function qemuAgentSetUserPassword($node, $vmid, $data = array())
+  {
+      return Request::Request("/nodes/$node/qemu/$vmid/agent/set-user-password", $data, 'POST');
+  }
+  /**
     * Create a copy of virtual machine/template
     * POST /api2/json/nodes/{node}/qemu/{vmid}/clone
     * @param string   $node    The cluster node name.
