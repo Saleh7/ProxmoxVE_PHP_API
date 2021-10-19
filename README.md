@@ -48,7 +48,7 @@
 To install ProxmoxVE_PHP_API, simply:
 
 ```bash
-composer require saleh7/proxmox-ve_php_api @dev
+composer require saleh7/proxmox-ve_php_api
 ```
 
 ## Usage
@@ -359,6 +359,7 @@ Cluster::deleteReplication($id)
 ```php
 Pools::Pools()
 Pools::PoolsID($poolid)
+Pools::PutPool($poolid, $data = array())
 ```
 
 ## Storage
