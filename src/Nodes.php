@@ -1543,6 +1543,17 @@ class Nodes
       return Request::Request("/nodes/$node/qemu/$vmid/status/stop", $data, 'POST');
   }
   /**
+    * Reboot virtual machine.
+    * POST /api2/json/nodes/{node}/qemu/{vmid}/status/reboot
+    * @param string   $node     The cluster node name.
+    * @param integer  $vmid     The (unique) ID of the VM.
+    * @param array    $data
+  */
+  public function qemuReboot($node, $vmid, $data = array())
+  {
+      return Request::Request("/nodes/$node/qemu/$vmid/status/reboot", $data, 'POST');
+  }
+  /**
     * Suspend the  virtual machine.
     * POST /api2/json/nodes/{node}/qemu/{vmid}/status/suspend
     * @param string   $node    The cluster node name.
