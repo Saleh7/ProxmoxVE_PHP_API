@@ -29,4 +29,13 @@ class Pools
   {
       return Request::Request("/pools/$poolid");
   }
+  /**
+    * Read system log
+    * GET /api2/json/pools/{poolid}
+    * @param string   $poolid
+  */
+  public function PutPool($poolid, $data = array())
+  {
+      return Request::Request("/pools/$poolid", $data, "PUT");
+  }
 }
