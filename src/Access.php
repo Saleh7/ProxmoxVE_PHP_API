@@ -16,7 +16,7 @@ class Access
     * Directory index.
     * GET /api2/json/access
   */
-  public function Access()
+  public static function Access()
   {
       return Request::Request("/access");
   }
@@ -24,7 +24,7 @@ class Access
     * Authentication domain index
     * GET /api2/json/access/domains
   */
-  public function Domains()
+  public static function Domains()
   {
       return Request::Request("/access/domains");
   }
@@ -33,7 +33,7 @@ class Access
     * POST /api2/json/access/domains
     * @param array    $data
   */
-  public function addDomain($data = array())
+  public static function addDomain($data = array())
   {
       return Request::Request("/access/domains", $data, 'POST');
   }
@@ -42,7 +42,7 @@ class Access
     * GET /api2/json/access/domains/{realm}
     * @param string   $realm   Authentication domain ID
   */
-  public function domainsRealm($realm)
+  public static function domainsRealm($realm)
   {
       return Request::Request("/access/domains/$realm");
   }
@@ -52,7 +52,7 @@ class Access
     * @param string   $realm   Authentication domain ID
     * @param array    $data
   */
-  public function updateDomain($realm, $data = array())
+  public static function updateDomain($realm, $data = array())
   {
       return Request::Request("/access/domains/$realm", $data, 'PUT');
   }
@@ -61,7 +61,7 @@ class Access
     * DELETE /api2/json/access/domains/{realm}
     * @param string   $realm   Authentication domain ID
   */
-  public function deleteDomain($realm)
+  public static function deleteDomain($realm)
   {
       return Request::Request("/access/domains/$realm", null, 'DELETE');
   }
@@ -69,7 +69,7 @@ class Access
     * Get groups
     * GET /api2/json/access/groups
   */
-  public function Groups()
+  public static function Groups()
   {
       return Request::Request("/access/groups");
   }
@@ -78,7 +78,7 @@ class Access
     * POST /api2/json/access/groups
     * @param array    $data
   */
-  public function createGroup($data = array())
+  public static function createGroup($data = array())
   {
       return Request::Request("/access/groups", $data, 'POST');
   }
@@ -87,7 +87,7 @@ class Access
     * GET /api2/json/access/groups/{groupid}
     * @param string   $groupid
   */
-  public function GroupId($groupid)
+  public static function GroupId($groupid)
   {
       return Request::Request("/access/groups/$groupid");
   }
@@ -97,7 +97,7 @@ class Access
     * @param string   $groupid
     * @param array    $data
   */
-  public function updateGroup($groupid, $data = array())
+  public static function updateGroup($groupid, $data = array())
   {
       return Request::Request("/access/groups/$groupid", $data, 'POST');
   }
@@ -106,7 +106,7 @@ class Access
     * DELETE /api2/json/access/groups/{groupid}
     * @param string   $groupid
   */
-  public function deleteGroup($groupid)
+  public static function deleteGroup($groupid)
   {
       return Request::Request("/access/groups/$groupid", null, 'DELETE');
   }
@@ -114,7 +114,7 @@ class Access
     * Get roles
     * GET /api2/json/access/roles
   */
-  public function Roles()
+  public static function Roles()
   {
       return Request::Request("/access/roles");
   }
@@ -123,7 +123,7 @@ class Access
     * POST /api2/json/access/roles
     * @param array    $data
   */
-  public function createRole($data = array())
+  public static function createRole($data = array())
   {
       return Request::Request("/access/roles", $data, 'POST');
   }
@@ -132,7 +132,7 @@ class Access
     * GET /api2/json/access/roles/{roleid}
     * @param string   $roleid
   */
-  public function RoleId($roleid)
+  public static function RoleId($roleid)
   {
       return Request::Request("/access/roles/$roleid");
   }
@@ -142,7 +142,7 @@ class Access
     * @param string   $roleid
     * @param array    $data
   */
-  public function updateRole($roleid, $data = array())
+  public static function updateRole($roleid, $data = array())
   {
       return Request::Request("/access/roles/$roleid", $data, 'PUT');
   }
@@ -151,7 +151,7 @@ class Access
     * DELETE /api2/json/access/roles/{roleid}
     * @param string   $roleid
   */
-  public function deleteRole($roleid)
+  public static function deleteRole($roleid)
   {
       return Request::Request("/access/roles/$roleid", null, 'DELETE');
   }
@@ -159,7 +159,7 @@ class Access
     * Get users
     * GET /api2/json/access/users
   */
-  public function Users()
+  public static function Users()
   {
       return Request::Request("/access/users");
   }
@@ -168,7 +168,7 @@ class Access
     * POST /api2/json/access/users
     * @param array    $data
   */
-  public function createUser($data = array())
+  public static function createUser($data = array())
   {
       return Request::Request("/access/users", $data, 'POST');
   }
@@ -177,7 +177,7 @@ class Access
     * GET /api2/json/access/users/{userid}
     * @param string   $userid
   */
-  public function getUser($userid)
+  public static function getUser($userid)
   {
       return Request::Request("/access/users/$userid");
   }
@@ -187,7 +187,7 @@ class Access
     * @param string   $userid
     * @param array    $data
   */
-  public function updateUser($userid, $data = array())
+  public static function updateUser($userid, $data = array())
   {
       return Request::Request("/access/users/$userid", $data, 'PUT');
   }
@@ -196,7 +196,7 @@ class Access
     * DELETE /api2/json/access/users/{userid}
     * @param string   $userid
   */
-  public function deleteUser($userid)
+  public static function deleteUser($userid)
   {
       return Request::Request("/access/users/$userid", null, 'DELETE');
   }
@@ -205,7 +205,7 @@ class Access
     * PUT /api2/json/access/password
     * @param array    $data
   */
-  public function changeUserPassword($data = array())
+  public static function changeUserPassword($data = array())
   {
       return Request::Request("/access/password", $data, 'PUT');
   }
@@ -213,7 +213,7 @@ class Access
     * Get Access Control List (ACLs).
     * GET /api2/json/access/acl
   */
-  public function Acl()
+  public static function Acl()
   {
       return Request::Request("/access/acl");
   }
@@ -222,7 +222,7 @@ class Access
     * PUT /api2/json/access/acl
     * @param array    $data
   */
-  public function updateAcl($data = array())
+  public static function updateAcl($data = array())
   {
       return Request::Request("/access/acl", $data, 'PUT');
   }
@@ -231,7 +231,7 @@ class Access
     * POST /api2/json/access/ticket
     * @param array    $data
   */
-  public function createTicket($data = array())
+  public static function createTicket($data = array())
   {
       return Request::Request("/access/ticket", $data, 'POST');
   }

@@ -18,7 +18,7 @@ class Storage
     * GET /api2/json/storage
     * @param enum     $type   Only list storage of specific type
   */
-  public function Storage($type = null)
+  public static function Storage($type = null)
   {
       $optional['type'] = !empty($type) ? $type : 0;
       return Request::Request("/storage", $optional);
@@ -28,7 +28,7 @@ class Storage
     * POST /api2/json/storage
     * @param array    $data
   */
-  public function createStorage($data = array())
+  public static function createStorage($data = array())
   {
       return Request::Request("/storage", $data, 'POST');
   }
@@ -37,7 +37,7 @@ class Storage
     * GET /api2/json/storage/{storage}
     * @param string   $storage   The storage identifier.
   */
-  public function getStorage($storage)
+  public static function getStorage($storage)
   {
       return Request::Request("/storage/$storage");
   }
@@ -47,7 +47,7 @@ class Storage
     * @param string   $storage   The storage identifier.
     * @param array    $data
   */
-  public function updateStorage($storage, $data = array())
+  public static function updateStorage($storage, $data = array())
   {
       return Request::Request("/storage/$storage", $data, 'PUT');
   }
@@ -56,7 +56,7 @@ class Storage
     * Delete /api2/json/storage/{storage}
     * @param string   $storage   The storage identifier.
   */
-  public function deleteStorage($storage)
+  public static function deleteStorage($storage)
   {
       return Request::Request("/storage/$storage", null, 'Delete');
   }
