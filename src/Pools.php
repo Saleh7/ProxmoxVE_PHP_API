@@ -16,7 +16,7 @@ class Pools
     * Read system log
     * GET /api2/json/pools
   */
-  public function Pools()
+  public static function Pools()
   {
       return Request::Request("/pools");
   }
@@ -25,7 +25,7 @@ class Pools
     * GET /api2/json/pools/{poolid}
     * @param string   $poolid
   */
-  public function PoolsID($poolid)
+  public static function PoolsID($poolid)
   {
       return Request::Request("/pools/$poolid");
   }
@@ -34,7 +34,7 @@ class Pools
     * GET /api2/json/pools/{poolid}
     * @param string   $poolid
   */
-  public function PutPool($poolid, $data = array())
+  public static function PutPool($poolid, $data = array())
   {
       return Request::Request("/pools/$poolid", $data, "PUT");
   }

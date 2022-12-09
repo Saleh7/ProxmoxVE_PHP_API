@@ -16,7 +16,7 @@ class Cluster
     * Cluster index.
     * GET /api2/json/cluster
   */
-  public function Cluster()
+  public static function Cluster()
   {
       return Request::Request("/cluster");
   }
@@ -24,7 +24,7 @@ class Cluster
     * List vzdump backup schedule.
     * GET /api2/json/cluster/backup
   */
-  public function ListBackup()
+  public static function ListBackup()
   {
       return Request::Request("/cluster/backup");
   }
@@ -33,7 +33,7 @@ class Cluster
     * POST /api2/json/cluster/backup
     * @param array    $data
   */
-  public function createBackup($data = array())
+  public static function createBackup($data = array())
   {
       return Request::Request("/cluster/backup", $data, 'POST');
   }
@@ -42,7 +42,7 @@ class Cluster
     * GET /api2/json/cluster/backup/{id}
     * @param string   $id    The job ID.
   */
-  public function BackupId($id)
+  public static function BackupId($id)
   {
       return Request::Request("/cluster/backup/$id");
   }
@@ -52,7 +52,7 @@ class Cluster
     * @param string   $id    The job ID.
     * @param array    $data
   */
-  public function updateBackup($id, $data = array())
+  public static function updateBackup($id, $data = array())
   {
       return Request::Request("/cluster/backup/$id", $data, 'PUT');
   }
@@ -61,7 +61,7 @@ class Cluster
     * DELETE /api2/json/cluster/backup/{id}
     * @param string   $id    The job ID.
   */
-  public function deleteBackup($id)
+  public static function deleteBackup($id)
   {
       return Request::Request("/cluster/backup/$id", null, 'DELETE');
   }
@@ -69,7 +69,7 @@ class Cluster
     * Read vzdump backup job definition.
     * GET /api2/json/cluster/config
   */
-  public function Config()
+  public static function Config()
   {
       return Request::Request("/cluster/config");
   }
@@ -77,7 +77,7 @@ class Cluster
     * Corosync node list.
     * GET /api2/json/cluster/config/nodes
   */
-  public function listConfigNodes()
+  public static function listConfigNodes()
   {
       return Request::Request("/cluster/config/nodes");
   }
@@ -85,7 +85,7 @@ class Cluster
     * Get corosync totem protocol settings.
     * GET /api2/json/cluster/config/totem
   */
-  public function configTotem()
+  public static function configTotem()
   {
       return Request::Request("/cluster/config/totem");
   }
@@ -93,7 +93,7 @@ class Cluster
     * Directory index.
     * GET /api2/json/cluster/firewall
   */
-  public function Firewall()
+  public static function Firewall()
   {
       return Request::Request("/cluster/firewall");
   }
@@ -101,7 +101,7 @@ class Cluster
     * List aliases
     * GET /api2/json/cluster/firewall/aliases
   */
-  public function firewallListAliases()
+  public static function firewallListAliases()
   {
       return Request::Request("/cluster/firewall/aliases");
   }
@@ -110,7 +110,7 @@ class Cluster
     * POST /api2/json/cluster/firewall/aliases
     * @param array    $data
   */
-  public function createFirewallAliase($data = array())
+  public static function createFirewallAliase($data = array())
   {
       return Request::Request("/cluster/firewall/aliases", $data, 'POST');
   }
@@ -119,7 +119,7 @@ class Cluster
     * GET /api2/json/cluster/firewall/aliases/{name}
     * @param string   $name    Alias name.
   */
-  public function getFirewallAliasesName($name)
+  public static function getFirewallAliasesName($name)
   {
       return Request::Request("/cluster/firewall/aliases/$name");
   }
@@ -129,7 +129,7 @@ class Cluster
     * @param string   $name    Alias name.
     * @param array    $data
   */
-  public function updateFirewallAliase($name, $data = array())
+  public static function updateFirewallAliase($name, $data = array())
   {
       return Request::Request("/cluster/firewall/aliases/$name", $data, 'PUT');
   }
@@ -138,7 +138,7 @@ class Cluster
     * PUT /api2/json/cluster/firewall/aliases/{name}
     * @param string   $name    Alias name.
   */
-  public function removeFirewallAliase($name)
+  public static function removeFirewallAliase($name)
   {
       return Request::Request("/cluster/firewall/aliases/$name", null, 'DELETE');
   }
@@ -146,7 +146,7 @@ class Cluster
     * List security groups.
     * GET /api2/json/cluster/firewall/groups
   */
-  public function firewallListGroups()
+  public static function firewallListGroups()
   {
       return Request::Request("/cluster/firewall/groups");
   }
@@ -155,7 +155,7 @@ class Cluster
     * POST /api2/json/cluster/firewall/groups
     * @param array    $data
   */
-  public function createFirewallGroup($data = array())
+  public static function createFirewallGroup($data = array())
   {
       return Request::Request("/cluster/firewall/groups", $data, 'POST');
   }
@@ -164,7 +164,7 @@ class Cluster
     * GET /api2/json/cluster/firewall/groups/{group}
     * @param string   $group    Security Group name.
   */
-  public function firewallGroupsGroup($group)
+  public static function firewallGroupsGroup($group)
   {
       return Request::Request("/cluster/firewall/groups/$group");
   }
@@ -174,7 +174,7 @@ class Cluster
     * @param string   $group    Security Group name.
     * @param array    $data
   */
-  public function createRuleFirewallGroup($group, $data = array())
+  public static function createRuleFirewallGroup($group, $data = array())
   {
       return Request::Request("/cluster/firewall/groups/$group", $data, 'POST');
   }
@@ -183,7 +183,7 @@ class Cluster
     * PUT /api2/json/cluster/firewall/aliases/{name}
     * @param string   $group    Security Group name.
   */
-  public function removeFirewallGroup($group)
+  public static function removeFirewallGroup($group)
   {
       return Request::Request("/cluster/firewall/groups/$group", null, 'DELETE');
   }
@@ -193,7 +193,7 @@ class Cluster
     * @param string   $group    Security Group name.
     * @param integer  $pos      Update rule at position <pos>.
   */
-  public function firewallGroupsGroupPos($group, $pos)
+  public static function firewallGroupsGroupPos($group, $pos)
   {
       return Request::Request("/cluster/firewall/groups/$group/$pos");
   }
@@ -204,7 +204,7 @@ class Cluster
     * @param integer  $pos      Update rule at position <pos>.
     * @param array    $data
   */
-  public function setFirewallGroupPos($group, $pos, $data = array())
+  public static function setFirewallGroupPos($group, $pos, $data = array())
   {
       return Request::Request("/cluster/firewall/groups/$group/$pos", $data, 'PUT');
   }
@@ -214,7 +214,7 @@ class Cluster
     * @param string   $group    Security Group name.
     * @param integer  $pos      Update rule at position <pos>.
   */
-  public function removeFirewallGroupPos($group, $pos)
+  public static function removeFirewallGroupPos($group, $pos)
   {
       return Request::Request("/cluster/firewall/groups/$group/$pos", null, 'DELETE');
   }
@@ -222,7 +222,7 @@ class Cluster
     * List IPSets
     * GET /api2/json/cluster/firewall/ipset
   */
-  public function firewallListIpset()
+  public static function firewallListIpset()
   {
       return Request::Request("/cluster/firewall/ipset");
   }
@@ -231,7 +231,7 @@ class Cluster
     * POST /api2/json/cluster/firewall/ipset
     * @param array    $data
   */
-  public function createFirewallIpset($data = array())
+  public static function createFirewallIpset($data = array())
   {
       return Request::Request("/cluster/firewall/ipset", $data, 'POST');
   }
@@ -240,7 +240,7 @@ class Cluster
     * GET /api2/json/cluster/firewall/ipset/{name}
     * @param string   $name    IP set name.
   */
-  public function firewallIpsetName($name)
+  public static function firewallIpsetName($name)
   {
       return Request::Request("/cluster/firewall/ipset/$name");
   }
@@ -250,7 +250,7 @@ class Cluster
     * @param string   $name    IP set name.
     * @param array    $data
   */
-  public function addFirewallIpsetName($name, $data = array())
+  public static function addFirewallIpsetName($name, $data = array())
   {
       return Request::Request("/cluster/firewall/ipset/$name", $data, 'POST');
   }
@@ -259,7 +259,7 @@ class Cluster
     * GET /api2/json/cluster/firewall/ipset/{name}
     * @param string   $name    IP set name.
   */
-  public function deleteFirewallIpsetName($name)
+  public static function deleteFirewallIpsetName($name)
   {
       return Request::Request("/cluster/firewall/ipset/$name", null, 'DELETE');
   }
@@ -267,7 +267,7 @@ class Cluster
     * List rules.
     * GET /api2/json/cluster/firewall/rules
   */
-  public function firewallListRules()
+  public static function firewallListRules()
   {
       return Request::Request("/cluster/firewall/rules");
   }
@@ -276,7 +276,7 @@ class Cluster
     * GET /api2/json/cluster/firewall/rules
     * @param array    $data
   */
-  public function createFirewallRules($data = array())
+  public static function createFirewallRules($data = array())
   {
       return Request::Request("/cluster/firewall/rules", $data, 'POST');
   }
@@ -285,7 +285,7 @@ class Cluster
     * GET /api2/json/cluster/firewall/rules/{pos}
     * @param integer  $pos      Update rule at position <pos>.
   */
-  public function firewallRulesPos($pos)
+  public static function firewallRulesPos($pos)
   {
       return Request::Request("/cluster/firewall/rules/$pos");
   }
@@ -295,7 +295,7 @@ class Cluster
     * @param integer  $pos      Update rule at position <pos>.
     * @param array    $data
   */
-  public function setFirewallRulesPos($pos, $data = array())
+  public static function setFirewallRulesPos($pos, $data = array())
   {
       return Request::Request("/cluster/firewall/rules/$pos", $data, 'PUT');
   }
@@ -304,7 +304,7 @@ class Cluster
     * DELETE /api2/json/cluster/firewall/rules/{pos}
     * @param integer  $pos      Update rule at position <pos>.
   */
-  public function deleteFirewallRulesPos($pos)
+  public static function deleteFirewallRulesPos($pos)
   {
       return Request::Request("/cluster/firewall/rules/$pos", null, 'DELETE');
   }
@@ -312,7 +312,7 @@ class Cluster
     * List available macros
     * GET /api2/json/cluster/firewall/macros
   */
-  public function firewallListMacros()
+  public static function firewallListMacros()
   {
       return Request::Request("/cluster/firewall/macros");
   }
@@ -320,7 +320,7 @@ class Cluster
     * Get Firewall options.
     * GET /api2/json/cluster/firewall/options
   */
-  public function firewallListOptions()
+  public static function firewallListOptions()
   {
       return Request::Request("/cluster/firewall/options");
   }
@@ -329,7 +329,7 @@ class Cluster
     * PUT /api2/json/cluster/firewall/options
     * @param array    $data
   */
-  public function setFirewallOptions($data = array())
+  public static function setFirewallOptions($data = array())
   {
       return Request::Request("/cluster/firewall/options", $data, 'PUT');
   }
@@ -337,7 +337,7 @@ class Cluster
     * Lists possible IPSet/Alias reference which are allowed in source/dest properties.
     * GET /api2/json/cluster/firewall/refs
   */
-  public function firewallListRefs()
+  public static function firewallListRefs()
   {
       return Request::Request("/cluster/firewall/refs");
   }
@@ -345,7 +345,7 @@ class Cluster
     * Get HA groups.
     * GET /api2/json/cluster/ha/groups
   */
-  public function getHaGroups()
+  public static function getHaGroups()
   {
       return Request::Request("/cluster/ha/groups");
   }
@@ -354,7 +354,7 @@ class Cluster
     * GET /api2/json/cluster/ha/groups/{group}
     * @param string   $group      The HA group identifier.
   */
-  public function HaGroups($group)
+  public static function HaGroups($group)
   {
       return Request::Request("/cluster/ha/groups/$group");
   }
@@ -362,7 +362,7 @@ class Cluster
     * List HA resources.
     * GET /api2/json/cluster/ha/resources
   */
-  public function HaResources()
+  public static function HaResources()
   {
       return Request::Request("/cluster/ha/resources");
   }
@@ -370,7 +370,7 @@ class Cluster
     * List HA resources.
     * GET /api2/json/cluster/ha/resources
   */
-  public function Replication()
+  public static function Replication()
   {
       return Request::Request("/cluster/replication");
   }
@@ -379,7 +379,7 @@ class Cluster
     * POST /api2/json/cluster/ha/resources
     * @param array    $data
   */
-  public function createReplication($data = array())
+  public static function createReplication($data = array())
   {
       return Request::Request("/cluster/replication", $data, "POST");
   }
@@ -388,7 +388,7 @@ class Cluster
     * GET /api2/json/cluster/replication/{id}
     * @param string   $id     Replication Job ID. The ID is composed of a Guest ID and a job number, separated by a hyphen, i.e. '<GUEST>-<JOBNUM>'.
   */
-  public function replicationId($id)
+  public static function replicationId($id)
   {
       return Request::Request("/cluster/replication/$id");
   }
@@ -398,7 +398,7 @@ class Cluster
     * @param string   $id     Replication Job ID. The ID is composed of a Guest ID and a job number, separated by a hyphen, i.e. '<GUEST>-<JOBNUM>'.
     * @param array    $data
   */
-  public function updateReplication($id, $data = array())
+  public static function updateReplication($id, $data = array())
   {
       return Request::Request("/cluster/replication/$id", $data, "PUT");
   }
@@ -407,7 +407,7 @@ class Cluster
     * DELETE /api2/json/cluster/replication/{id}
     * @param string   $id     Replication Job ID. The ID is composed of a Guest ID and a job number, separated by a hyphen, i.e. '<GUEST>-<JOBNUM>'.
   */
-  public function deleteReplication($id)
+  public static function deleteReplication($id)
   {
       return Request::Request("/cluster/replication/$id", null, "DELETE");
   }
@@ -416,7 +416,7 @@ class Cluster
     * GET /api2/json/cluster/log
     * @param integer  $max     Maximum number of entries.
   */
-  public function Log($max = null)
+  public static function Log($max = null)
   {
       $optional['max'] = !empty($max) ? $max : null;
       return Request::Request("/cluster/log", $optional);
@@ -426,7 +426,7 @@ class Cluster
     * GET /api2/json/cluster/nextid
     * @param integer  $vmid     The (unique) ID of the VM.
   */
-  public function nextVmid($vmid = null)
+  public static function nextVmid($vmid = null)
   {
       $optional['vmid'] = !empty($vmid) ? $vmid : null;
       return Request::Request("/cluster/nextid", $optional);
@@ -435,7 +435,7 @@ class Cluster
     * Get datacenter options.
     * GET /api2/json/cluster/options
   */
-  public function Options()
+  public static function Options()
   {
       return Request::Request("/cluster/options");
   }
@@ -444,7 +444,7 @@ class Cluster
     * PUT /api2/json/cluster/options
     * @param array    $data
   */
-  public function setOptions($data = array())
+  public static function setOptions($data = array())
   {
       return Request::Request("/cluster/options", $data, "PUT");
   }
@@ -453,7 +453,7 @@ class Cluster
     * GET /api2/json/cluster/resources
     * @param enum     $type    vm | storage | node
   */
-  public function Resources($type = null)
+  public static function Resources($type = null)
   {
       $optional['type'] = !empty($type) ? $type : null;
       return Request::Request("/cluster/resources", $optional);
@@ -462,7 +462,7 @@ class Cluster
     * Get cluster status informations.
     * GET /api2/json/cluster/status
   */
-  public function Status()
+  public static function Status()
   {
       return Request::Request("/cluster/status");
   }
@@ -470,7 +470,7 @@ class Cluster
     * List recent tasks (cluster wide).
     * GET /api2/json/cluster/tasks
   */
-  public function Tasks()
+  public static function Tasks()
   {
       return Request::Request("/cluster/tasks");
   }
