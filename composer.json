@@ -2,7 +2,12 @@
     "name": "saleh7/proxmox-ve_php_api",
     "type": "library",
     "description": "ProxmoxVE PHP API",
-    "keywords": ["Proxmox", "API", "PHP", "PVE"],
+    "keywords": [
+        "Proxmox",
+        "API",
+        "PHP",
+        "PVE"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -12,6 +17,7 @@
     ],
     "require": {
         "php": ">=7.0",
+        "ext-curl": "*",
         "php-curl-class/php-curl-class": "^9.0"
     },
     "autoload": {
