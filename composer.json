@@ -20,6 +20,9 @@
         "ext-curl": "*",
         "php-curl-class/php-curl-class": "^9.0"
     },
+    "suggest": {
+        "ext-mbstring": "*"
+    },
     "autoload": {
         "psr-4": {
             "Proxmox\\": "src/"
