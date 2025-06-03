@@ -1598,6 +1598,13 @@ class Nodes
       return Request::Request("/nodes/$node/qemu/$vmid/agent/set-user-password", $data, 'POST');
   }
   /**
+     * 
+     */
+  public function qemuAgentInfo($node, $vmid, $data = array())
+  {
+      return Request::Request("/nodes/$node/qemu/$vmid/agent/get-fsinfo", $data, 'GET');
+  }
+  /**
     * Create a copy of virtual machine/template
     * POST /api2/json/nodes/{node}/qemu/{vmid}/clone
     * @param string   $node    The cluster node name.
