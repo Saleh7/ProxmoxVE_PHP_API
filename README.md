@@ -48,7 +48,7 @@
 To install ProxmoxVE_PHP_API, simply:
 
 ```bash
-composer require saleh7/proxmox-ve_php_api
+composer require as23project/proxmox-ve_php_api
 ```
 
 ## Usage
