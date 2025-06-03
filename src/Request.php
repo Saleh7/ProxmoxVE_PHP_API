@@ -3,7 +3,7 @@
 /**
  * ProxmoxVE PHP API
  *
- * @copyright 2017 Saleh <Saleh7@protonmail.ch>
+ * @copyright 2025 AS23Project <a.sigit2303@gmail.com>
  * @license http://opensource.org/licenses/MIT The MIT License.
  */
 
