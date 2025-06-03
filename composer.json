@@ -1,13 +1,18 @@
 {
-    "name": "saleh7/proxmox-ve_php_api",
+    "name": "as23project/proxmox-ve_php_api",
     "type": "library",
     "description": "ProxmoxVE PHP API",
-    "keywords": ["Proxmox", "API", "PHP", "PVE"],
+    "keywords": [
+        "Proxmox",
+        "API",
+        "PHP",
+        "PVE"
+    ],
     "license": "MIT",
     "authors": [
         {
-            "name": "Saleh",
-            "email": "Saleh7@protonmail.ch"
+            "name": "AS23Project",
+            "email": "a.sigit230@gmail.com"
         }
     ],
     "require": {
