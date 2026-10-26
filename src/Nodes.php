@@ -2400,6 +2400,16 @@ class Nodes
       return Request::Request("/nodes/$node/version");
   }
   /**
+   * Get current node status.~~
+   *
+   * GET /api2/json/nodes/{node}/status
+   * @param string $node The cluster node name.
+   */
+  public function NodeStatus($node)
+  {
+      return Request::Request("/nodes/$node/status");
+  }
+  /**
     * Creates a VNC Shell proxy.
     * POST /api2/json/nodes/{node}/vncshell
     * @param string   $node     The cluster node name.
